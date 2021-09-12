@@ -1,7 +1,10 @@
+import { resolve } from "path";
 
 export default {
   clearMocks: true,
   //collectCoverage: true,
+  rootDir: resolve(__dirname),
+  testMatch: ['<rootDir>/test/**/*.spec.ts'],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
 
@@ -24,6 +27,6 @@ export default {
   ],
   transformIgnorePatterns: ["node_modules"],
   collectCoverageFrom: [
-    "src/**/*.ts", "!src/**/index.ts"
+    "src/**/*.ts", "!src/**/index.ts","!src/**/App.ts"
   ]
 };
